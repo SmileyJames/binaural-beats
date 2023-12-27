@@ -50,9 +50,7 @@ const SineWave: FC<SineWaveProps> = ({ frequencies, themeColors }) => {
       window.requestAnimationFrame(() => Draw(context));
     }, [frequencies, themeColors, canvasRef, zoom]);
 
-    // 
     return (
-      // a nice 
       <Card>
         <canvas ref={canvasRef} className="w-full h-64 m-2 mt-4" />
         <span className="flex flex-col items-center justify-center p-4">
