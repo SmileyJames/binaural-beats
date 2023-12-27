@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-center mb-4">Binaural Beats</h1>
         <h2 className="text-xl text-center mb-4">Experience the power of sound therapy with our binaural beats generator</h2>
       </div>
-      <Image src="/chill.png" width={300} height={300} alt="Chill" />
+      <Image src="./chill.png" width={300} height={300} alt="Chill" />
       <BinauralBeats />
     </div>
   )
