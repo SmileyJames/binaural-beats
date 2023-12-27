@@ -5,6 +5,7 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
+    basePath: '/binaural-beats',
 }
 
 module.exports = nextConfig
