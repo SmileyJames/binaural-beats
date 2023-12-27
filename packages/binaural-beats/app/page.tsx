@@ -1,5 +1,7 @@
 "use client"
 import { useState, useMemo, ReactNode, useEffect, useRef } from 'react';
+import SineWave from './SineWave';
+import Card from './Card';
 
 class AudioController {
   private audioContext: AudioContext;
@@ -111,12 +113,7 @@ const PlaybackControls = ({ isPlaying, setIsPlaying }: { isPlaying: boolean, set
   )
 }
 
-const Card = ({ children }: { children: ReactNode }) => (
-  // col
-  <div className="p-4 max-w-sm mx-auto bg-white rounded-xl shadow-md flex flex-col space-y-1">
-    {children}
-  </div>
-)
+
 
 const FrequencyInfo = ({ frequency }: { frequency: number }) => {
   let mood: string;
@@ -208,6 +205,7 @@ export default function Home() {
         <FrequencyInfo frequency={frequencyDifference} />
         <FrequencyInfo2 leftFrequency={leftFrequency} rightFrequency={rightFrequency} />
         <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+        <SineWave frequencies={[leftFrequency, rightFrequency]} themeColors={['rgba(156, 39, 176, 0.5)', 'rgba(76, 175, 80, 0.5)']} />
       </div>
     </div>
   )
