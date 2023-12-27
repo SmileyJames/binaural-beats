@@ -1,6 +1,6 @@
 {
   "name": "bineural-beats",
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@3.5.0",
   "workspaces": [
     "packages/*"
   ]
