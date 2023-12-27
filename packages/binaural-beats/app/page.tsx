@@ -14,7 +14,7 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [userVolume, setUserVolume] = useState(1);
   const [baseFrequency, setBaseFrequency] = useState(100);
-  const [frequencyDifference, setFrequencyDifference] = useState(2);
+  const [frequencyDifference, setFrequencyDifference] = useState(4);
 
   const leftFrequency = useMemo(() => baseFrequency - frequencyDifference / 2, [baseFrequency, frequencyDifference]);
   const rightFrequency = useMemo(() => baseFrequency + frequencyDifference / 2, [baseFrequency, frequencyDifference]);

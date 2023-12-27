@@ -6,6 +6,8 @@ class AudioController {
   private rightOscillator: OscillatorNode | null = null;
   private leftGain: GainNode;
   private rightGain: GainNode;
+  private leftFrequency: number;
+  private rightFrequency: number;
 
   constructor() {
     // @ts-ignore
@@ -16,6 +18,8 @@ class AudioController {
     this.rightChannel.pan.value = 1;
     this.leftGain = this.audioContext.createGain();
     this.rightGain = this.audioContext.createGain();
+    this.leftFrequency = 98;
+    this.rightFrequency = 102;
   }
 
   setVolume(volume: number) {
@@ -24,16 +28,24 @@ class AudioController {
   }
 
   setFrequency(leftFrequency: number, rightFrequency: number) {
+    this.leftFrequency = leftFrequency;
+    this.rightFrequency = rightFrequency;
+
     if (!this.leftOscillator || !this.rightOscillator) return;
     this.leftOscillator.frequency.value = leftFrequency;
-    this.leftOscillator.type = 'sine';
     this.rightOscillator.frequency.value = rightFrequency;
+    this.leftOscillator.type = 'sine';
     this.rightOscillator.type = 'sine';
   }
 
   play() {
     this.leftOscillator = this.audioContext.createOscillator();
     this.rightOscillator = this.audioContext.createOscillator();
+  
+    // Set the frequency of the oscillators here
+    this.leftOscillator.frequency.value = this.leftFrequency;
+    this.rightOscillator.frequency.value = this.rightFrequency;
+  
     this.leftOscillator.connect(this.leftGain);
     this.rightOscillator.connect(this.rightGain);
     this.leftGain.connect(this.leftChannel);
