@@ -44,7 +44,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-center mb-4">Binaural Beats</h1>
         <h2 className="text-xl text-center mb-4">Experience the power of sound therapy with our binaural beats generator</h2>
       </div>
-      <div className="flex flex-row flex-wrap space-x-4 space-y-4 w-full max-w-4xl justify-center">
+      <div className="flex flex-row flex-wrap space-x-4 space-y-4 w-full max-w-4xl justify-center items-center">
         <div className="w-64">
           <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
         </div>

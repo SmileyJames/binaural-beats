@@ -4,7 +4,7 @@ const VolumeSlider = ({ value, onChange }: { value: number, onChange: (value: nu
   <Card>
     <div className="flex-shrink-0">
       <span className="text-2xl">
-        {value * 100}%
+        {Math.round(value * 100)}%
       </span>
     </div>
     <div>
