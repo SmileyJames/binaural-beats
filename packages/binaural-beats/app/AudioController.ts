@@ -34,14 +34,14 @@ class AudioController {
   play() {
     this.leftOscillator = this.audioContext.createOscillator();
     this.rightOscillator = this.audioContext.createOscillator();
-    this.leftOscillator.connect(this.leftChannel);
-    this.rightOscillator.connect(this.rightChannel);
+    this.leftOscillator.connect(this.leftGain);
+    this.rightOscillator.connect(this.rightGain);
+    this.leftGain.connect(this.leftChannel);
+    this.rightGain.connect(this.rightChannel);
     this.rightOscillator.start();
     this.leftOscillator.start();
     this.leftChannel.connect(this.audioContext.destination);
     this.rightChannel.connect(this.audioContext.destination);
-    this.leftChannel.connect(this.leftGain);
-    this.rightChannel.connect(this.rightGain);
   }
 
   pause() {
