@@ -68,6 +68,6 @@ class AudioController {
   }
 }
 
-const audioController = new AudioController();
+const audioController = typeof window !== 'undefined' ? new AudioController() : null;
 
 export default audioController;
